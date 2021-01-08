@@ -29,12 +29,13 @@
 
 ///Box
 draw_set_colour(c_black);
-draw_rectangle(0,825,900,1300,false);
+draw_rectangle(0,889,900,1300,false);
 
 ///Go through party list and make tabs for each member
-party = global.party_list;
-for (i = 0; i &lt; ds_list_size(party); i++) {
-    break;
+for (i = 0; i &lt; global.party_size; i++) {
+    ///draw_rectangle(0,825,128,889,false);
+    chara_button = instance_create(200,500,obj_button);
+    chara_button.text = "mc";
 }
 </string>
           </argument>

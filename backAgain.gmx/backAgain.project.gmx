@@ -13,12 +13,18 @@
     <sprite>sprites\spr_dark</sprite>
     <sprite>sprites\spr_cat</sprite>
     <sprite>sprites\spr_mc_portrait</sprite>
-    <sprite>sprites\spr_button</sprite>
+    <sprite>sprites\spr_button_menu</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_main_menu</background>
   </backgrounds>
-  <paths name="paths"/>
+  <paths name="paths">
+    <path>paths\path0</path>
+  </paths>
+  <scripts name="scripts">
+    <script>scripts\scr_menu_nav.gml</script>
+    <script>scripts\instance_nth_nearest.gml</script>
+  </scripts>
   <objects name="objects">
     <object>objects\obj_class_ground</object>
     <object>objects\obj_mc</object>

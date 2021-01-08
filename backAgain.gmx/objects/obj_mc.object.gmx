@@ -75,25 +75,32 @@ hp = 20;
             <string>/// Movement 
 /// up, down, left, right
 /// TODO up and down only when ladder
-if (keyboard_check_pressed(ord('W'))) {
-    if place_meeting(x,y,obj_ladder) {
-        phy_position_y -= 32;
+if global.move_timer &lt;= 0 {
+    if (keyboard_check/*_pressed*/(ord('W'))) {
+        if place_meeting(x,y,obj_ladder) {
+            phy_position_y -= 32;
+            global.move_timer = 5;
+        }
+    }
+    
+    if (keyboard_check/*_pressed*/(ord('S'))) {
+        if place_meeting(x,y,obj_ladder) {
+            phy_position_y += 32;
+            global.move_timer = 5;
+        }
+    }
+    
+    if (keyboard_check/*_pressed*/(ord('A'))) {
+        phy_position_x -= 32;
+        global.move_timer = 5;
+    }
+    
+    if (keyboard_check/*_pressed*/(ord('D'))) {
+        phy_position_x += 32;
+        global.move_timer = 5;
     }
 }
-
-if (keyboard_check_pressed(ord('S'))) {
-    if place_meeting(x,y,obj_ladder) {
-        phy_position_y += 32;
-    }
-}
-
-if (keyboard_check_pressed(ord('A'))) {
-    phy_position_x -= 32;
-}
-
-if (keyboard_check_pressed(ord('D'))) {
-    phy_position_x += 32;
-}
+global.move_timer--;
 </string>
           </argument>
         </arguments>
